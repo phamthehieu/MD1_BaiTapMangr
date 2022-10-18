@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4 phan 2</title>
+</head>
+<body>
+<input type="text" id="txt">
+<button id="btn" onclick="run()">Run</button>
+<p id="array"></p>
+<p id="doc"></p>
+<p id="result"></p>
+
+<script>
+    function run() {
+
+        let str = document.getElementById("txt").value
+        let num = ["a", "b", "c", "d", "e", "f", "j", "q", "w", "r", "t", "y", "u", "i", "o", "p", "s", "g", "h", "j", "k", "l", "z", "x", "v", "m", "n"]
+        let arr = [];
+        let flag = 0;
+        for (let i = 0; i < str.length; i++) {
+            arr[i] = str[i];
+            for (let j = 0; j < 10; j++) {
+                if (num[j] === arr[i]) flag++;
+            }
+        }
+        document.getElementById("array").innerHTML = arr + '';
+        document.getElementById("doc").innerHTML = 'Kích thước mảng: ' + arr.length + '';
+        document.getElementById("result").innerHTML = 'Số phần tử số trong mảng: ' + flag + '';
+    }
+</script>
+</body>
+</html>
